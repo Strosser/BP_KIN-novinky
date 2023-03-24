@@ -11,10 +11,10 @@ const fetchAuthPosts = async () => {
 }
 
 
-export default function MojePrispevky(){
-    const {data} = useQuery<AuthPrispevek>({queryFn: fetchAuthPosts, queryKey: ["auth-posts"]})
+export default function MojePrispevky() {
+    const { data } = useQuery<AuthPrispevek>({ queryFn: fetchAuthPosts, queryKey: ["auth-posts"] })
     if (data) console.log(data)
-    return(
+    return (
         <div>
             {data?.Post?.map((post) => (<UpravaPrispevek id={post.id} key={post.id} avatar={data.image} name={data.name} title={post.title} />))}
         </div>

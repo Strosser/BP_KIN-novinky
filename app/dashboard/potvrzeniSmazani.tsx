@@ -8,7 +8,7 @@ type PotvrzeniProps = {
 export default function PotvrzeniSmazani({ smazatPrispevek, potvrzeni }: PotvrzeniProps) {
   return (
     <div
-      onClick={(e) => {potvrzeni(false)}}
+      onClick={(e) => { potvrzeni(false) }}
       className="fixed bg-black/50 w-full h-full z-20 left-0 top-0 "
     >
       <div className="absolute bg-white top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 p-12 rounded-lg flex flex-col gap-6">
