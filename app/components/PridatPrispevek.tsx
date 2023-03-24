@@ -38,7 +38,7 @@ export default function VytvoritPost() {
                 <div className="flex items-center justify-between">
                     <p className={`font-bold text-sm ${title.length > 300 ? "text-red-700" : "text-gray-700"
                         } `}>{`${title.length}/300`}</p>
-                    <button disabled={isDisabled} className="text-lg bg-orange-400 shadow-lg hover:bg-orange-500 text-white py-2 px-12 rounded-xl disabled:opacity-25" type="submit">P</button>
+                    <button disabled={isDisabled} className="text-lg bg-orange-400 shadow-lg hover:bg-orange-500 text-white py-2 px-12 rounded-xl disabled:opacity-25" type="submit">Přidat</button>
                 </div>
             </div>
 
