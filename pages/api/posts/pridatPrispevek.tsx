@@ -13,8 +13,9 @@ export default async function handler(
 
 // ziskani usera
 const prismaUser = await prisma.user.findUnique({
-    where: { email: session?.user?.email?? "" },
+    where: { email: session?.user?.email?? ""},
   })
+  if (!prismaUser) return res.status(401).json({ message: "Uživatel nebyl nalezen" })
 
         const title: String = req.body.title
 //kontrola tittle
@@ -23,7 +24,7 @@ const prismaUser = await prisma.user.findUnique({
 
         try {
             const vysledek = await prisma.post.create({data: {
-                title, userId: prismaUser.id,
+                title: title.toString(), userId: prismaUser.id,
             },
         })
         console.log(vysledek)
