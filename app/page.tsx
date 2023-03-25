@@ -5,14 +5,26 @@ import axios from "axios"
 import Prispevek from "./components/Prispevek"
 import { PostType } from "./typy/Post"
 //fetch post
-const vsechnyPrispevky = async () => {
+const fetchPrispevky = async (): Promise<PostsType[]> => {
   const response = await axios.get("/api/posts/zobrazitPrispevek")
   return response.data
 }
 
+interface User {
+  name: string
+  image: string
+}
+
+interface PostsType {
+  title: string
+  id: string
+  createdAt?: string
+  user: User
+}
+
 export default function Home() {
-  const { data, error} = useQuery<PostType[]>({
-    queryFn: vsechnyPrispevky,
+  const { data, error} = useQuery({
+    queryFn: fetchPrispevky,
     queryKey: ["posts"],
   })
   if (error) return error
@@ -25,7 +37,7 @@ export default function Home() {
           key={post.id}
           name={post.user.name}
           avatar={post.user.image}
-          postTitle={post.title} id={undefined} />
+          postTitle={post.title} id={post.id} />
       ))}
     </main>
   )
