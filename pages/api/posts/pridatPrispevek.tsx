@@ -13,7 +13,7 @@ export default async function handler(
 
 // ziskani usera
 const prismaUser = await prisma.user.findUnique({
-    where: { email: session?.user?.email },
+    where: { email: session?.user?.email?? "" },
   })
 
         const title: String = req.body.title
