@@ -23,6 +23,6 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/layout.jsx", "prisma/client.tsx", "pages/api/posts/zobrazitPrispevek.js", "app/components/Prispevek.jsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/layout.jsx", "prisma/client.tsx", "pages/api/posts/zobrazitPrispevek.js", "app/components/Prispevek.tsx"],
   "exclude": ["node_modules"]
 }

@@ -3,8 +3,16 @@
 import Image from "next/image"
 import Link from "next/link"
 import { motion } from "framer-motion"
+import { Post } from "@prisma/client"
 
-export default function Prispevek({ avatar, name, postTitle, id }) {
+interface Prispevek{
+  id: string
+  name: string
+  avatar: string
+  postTitle: string
+}
+
+export default function Prispevek({ avatar, name, postTitle, id }: Prispevek){
   return (
     <motion.div
       animate={{ opacity: 1, scale: 1 }}
